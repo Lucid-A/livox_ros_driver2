@@ -1,3 +1,23 @@
+# Our Update
+
+In [`config/MID360_config.json`](config/MID360_config.json):
++ Use host IP `192.168.1.30`
+  - `"MID360"`
+    + `"host_net_info"`
+      - `"cmd_data_ip"`
+      - `"push_msg_ip"`
+      - `"point_data_ip"`
+      - `"imu_data_ip"`
+      - `"log_data_ip"`
++ Use MID360 assigned IP `192.168.1.43`
+  - `"MID360"`
+    + `"lidar_configs"`
+      - `"ip"`
+
+In [`launch_ROS1\rviz_MID360.launch`](launch_ROS1\rviz_MID360.launch):
++ Arg `"rviz_enable"` is switched to `false`
++ Arg `"msg_frame_id"` is set to `mid_laser_link`
+
 # Livox ROS Driver 2
 
 Livox ROS Driver 2 is the 2nd-generation driver package used to connect LiDAR products produced by Livox, applicable for ROS (noetic recommended) and ROS2 (foxy or humble recommended).
@@ -95,10 +115,10 @@ source ../../devel/setup.sh
 roslaunch livox_ros_driver2 [launch file]
 ```
 
-in which,  
+in which,
 
 * **livox_ros_driver2** : is the ROS package name of Livox ROS Driver 2;
-* **[launch file]** : is the ROS launch file you want to use; the 'launch_ROS1' folder contains several launch samples for your reference;  
+* **[launch file]** : is the ROS launch file you want to use; the 'launch_ROS1' folder contains several launch samples for your reference;
 
 An rviz launch example for HAP LiDAR would be:
 
@@ -112,7 +132,7 @@ source ../../install/setup.sh
 ros2 launch livox_ros_driver2 [launch file]
 ```
 
-in which,  
+in which,
 
 * **[launch file]** : is the ROS2 launch file you want to use; the 'launch_ROS2' folder contains several launch samples for your reference.
 
@@ -402,7 +422,7 @@ For more infomation about the HAP config, please refer to:
     "MID360": {
         "lidar_net_info": {
             "cmd_data_port": 56100, # command port
-            "push_msg_port": 56200, 
+            "push_msg_port": 56200,
             "point_data_port": 56300,
             "imu_data_port": 56400,
             "log_data_port": 56500
@@ -445,7 +465,7 @@ For more infomation about the HAP config, please refer to:
     "MID360": {
         "lidar_net_info": {
             "cmd_data_port": 56100, # command port
-            "push_msg_port": 56200, 
+            "push_msg_port": 56200,
             "point_data_port": 56300,
             "imu_data_port": 56400,
             "log_data_port": 56500
@@ -496,7 +516,7 @@ For more infomation about the HAP config, please refer to:
     <arg name="msg_frame_id" default="livox_frame"/>
     <arg name="lidar_bag" default="true"/>
     <arg name="imu_bag" default="true"/>
-    <!--user configure parameters for ros end--> 
+    <!--user configure parameters for ros end-->
 
     <param name="xfer_format" value="$(arg xfer_format)"/>
     <param name="multi_topic" value="$(arg multi_topic)"/>
@@ -543,7 +563,7 @@ For more infomation about the HAP config, please refer to:
     <arg name="msg_frame_id" default="livox_frame"/>
     <arg name="lidar_bag" default="true"/>
     <arg name="imu_bag" default="true"/>
-    <!--user configure parameters for ros end--> 
+    <!--user configure parameters for ros end-->
 
     <param name="xfer_format" value="$(arg xfer_format)"/>
     <param name="multi_topic" value="$(arg multi_topic)"/>
